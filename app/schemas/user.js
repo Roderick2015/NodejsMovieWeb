@@ -7,9 +7,15 @@ var UserSchema = new mongoose.Schema({
 		unique: true,
 		type: String
 	},
-	password: {
-		unique: true,
-		type: String
+	password: String,
+	//- 0: nomal
+	//- 1: verified
+	//- 2: professonal
+	//- >10: admin
+	//- >50: superAdmin
+	role: {
+		type: Number,
+		default: 0
 	},
 	meta: {
 		createAt: {
